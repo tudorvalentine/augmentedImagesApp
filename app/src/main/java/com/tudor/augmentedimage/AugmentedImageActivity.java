@@ -29,7 +29,6 @@ public class AugmentedImageActivity extends AppCompatActivity{
   private final static String URL = "https://augmented-images.herokuapp.com";
   private final static String LIST_IMAGE = "listImage.txt";
   private final static String LIST_IMAGE_URL = URL + "/download/?filename=" + LIST_IMAGE;
-  private  Context context;
   // Augmented image and its associated center pose anchor, keyed by the augmented image in
   // the database.
 
@@ -37,7 +36,7 @@ public class AugmentedImageActivity extends AppCompatActivity{
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    context = getApplicationContext();
+    Context context = getApplicationContext();
 
     download = new DownloadUtility(context);
     File file = getFileStreamPath(LIST_IMAGE);
@@ -99,13 +98,6 @@ public class AugmentedImageActivity extends AppCompatActivity{
         secondActivity.putExtra("index", indexAugmentedImage);
         secondActivity.putExtra("name", nameAugmentedImage);
         startActivity(secondActivity);
-
-//        case TRACKING:
-//
-//          break;
-//
-//        case STOPPED:
-//          break;
       }
     }
   }

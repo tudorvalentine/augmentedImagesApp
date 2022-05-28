@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.google.ar.core.AugmentedImageDatabase;
@@ -45,7 +46,7 @@ public class AugmentedImageFragment extends ArFragment{
   private static final double MIN_OPENGL_VERSION = 3.0;
 
   @Override
-  public void onAttach(Context context) {
+  public void onAttach(@NonNull Context context) {
     super.onAttach(context);
 
     // Check for Sceneform being supported on this device.  This check will be integrated into
