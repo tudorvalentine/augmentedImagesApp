@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/activity_main">
+
+    <fragment
+        android:id="@+id/activity_main"
+        android:name="com.google.ar.sceneform.samples.augmentedimage.activity_main"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_activity_main_to_consp"
+            app:destination="@id/consp" />
+    </fragment>
+    <fragment
+        android:id="@+id/consp"
+        android:name="com.google.ar.sceneform.samples.augmentedimage.consp"
+        android:label="consp"
+        tools:layout="@layout/consp" >
+        <action
+            android:id="@+id/action_consp_to_Browser"
+            app:destination="@id/Browser" />
+    </fragment>
+    <fragment android:id="@+id/Browser" />
+</navigation>
