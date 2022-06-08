@@ -86,8 +86,8 @@ public class AugmentedImageActivity extends AppCompatActivity{
       return;
     }
 
-    Collection<AugmentedImage> updatedAugmentedImages =
-        frame.getUpdatedTrackables(AugmentedImage.class);
+    Collection<AugmentedImage> updatedAugmentedImages = frame.getUpdatedTrackables(AugmentedImage.class);
+
     for (AugmentedImage augmentedImage : updatedAugmentedImages) {
       if (augmentedImage.getTrackingState() == TrackingState.PAUSED) {// When an image is in PAUSED state, but the camera is not PAUSED, it has been detected,
         // but not yet tracked.
