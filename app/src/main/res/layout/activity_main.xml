@@ -4,12 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    tools:context="com.tudor.augmentedimage.AugmentedImageActivity">
+    tools:context="com.tudor.augmentedimage.com.tudorvalentine.augmentedimages.AugmentedImageActivity">
 
 
     <fragment
         android:id="@+id/ux_fragment"
-        android:name="com.tudor.augmentedimage.AugmentedImageFragment"
+        android:name="com.tudorvalentine.augmentedimages.AugmentedImageFragment"
         android:layout_width="match_parent"
         android:layout_height="695dp"
         android:layout_gravity="center" />
