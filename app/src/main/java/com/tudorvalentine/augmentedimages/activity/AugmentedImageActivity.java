@@ -1,9 +1,7 @@
 package com.tudorvalentine.augmentedimages.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,9 +13,7 @@ import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.FrameTime;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.tudorvalentine.augmentedimages.R;
-import com.tudorvalentine.augmentedimages.helpers.DownloadUtility;
 
-import java.io.File;
 import java.util.Collection;
 public class AugmentedImageActivity extends AppCompatActivity{
   private static final String TAG = AugmentedImageActivity.class.getSimpleName();

@@ -15,13 +15,11 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.JsonRequest;
 import com.google.android.material.textfield.TextInputEditText;
 import com.tudorvalentine.augmentedimages.ActionActivity;
 import com.tudorvalentine.augmentedimages.R;
 import com.tudorvalentine.augmentedimages.app.AppConfig;
 import com.tudorvalentine.augmentedimages.app.AppController;
-import com.tudorvalentine.augmentedimages.helpers.DownloadUtility;
 import com.tudorvalentine.augmentedimages.helpers.SQLiteHandler;
 import com.tudorvalentine.augmentedimages.helpers.SessionManager;
 
@@ -121,9 +119,8 @@ public class AuthenticationActivity extends Activity {
                                 JSONObject assocRow = jsonArrayAssoc.getJSONObject(i);
                                 String image_name = assocRow.getString("image_name");
                                 String conspect_name = assocRow.getString("conspect_name");
-                                DownloadUtility downloadUtility = new DownloadUtility(getApplicationContext());
                                 SQLiteDatabase.addAssocUser(image_name, conspect_name);
-                                downloadUtility.downloadFile(image_name);
+                                AppController.getInstance().downloadFile(image_name);
                             }
                             hideDialog();
                         }

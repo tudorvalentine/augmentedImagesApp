@@ -22,7 +22,6 @@ import com.tudorvalentine.augmentedimages.activity.AugmentedImageActivity;
 import com.tudorvalentine.augmentedimages.activity.AuthenticationActivity;
 import com.tudorvalentine.augmentedimages.app.AppConfig;
 import com.tudorvalentine.augmentedimages.app.AppController;
-import com.tudorvalentine.augmentedimages.helpers.DownloadUtility;
 import com.tudorvalentine.augmentedimages.helpers.SQLiteHandler;
 import com.tudorvalentine.augmentedimages.helpers.SessionManager;
 
@@ -45,7 +44,6 @@ public class ActionActivity extends Activity {
     private SessionManager session;
 
     private ProgressDialog pDialog;
-    private DownloadUtility downloadUtility;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +58,6 @@ public class ActionActivity extends Activity {
 
         db = new SQLiteHandler(getApplicationContext());
         session = new SessionManager(getApplicationContext());
-        downloadUtility = new DownloadUtility(getApplicationContext());
         pDialog = new ProgressDialog(this);
 
         if (!session.isLoggedIn()){
@@ -118,7 +115,7 @@ public class ActionActivity extends Activity {
                                     for (int i = 0; i < jsonArray.length(); i++) {
                                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                                         String image_name = jsonObject.getString("image_name");
-                                        downloadUtility.downloadFile(image_name);
+                                        AppController.getInstance().downloadFile(image_name);
                                     }
                                     Toast.makeText(ActionActivity.this, "Sincronizarea a avut loc cu succes", Toast.LENGTH_LONG).show();
                                 }else if (countRowsAssocApp == countRowsAssocServer){
